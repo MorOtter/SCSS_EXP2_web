@@ -32,6 +32,11 @@ app.use(express.static(path.join(__dirname, "/public")));
 // middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  secret: 'Ihatethis',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(flash());
 app.use(methodOverride("_method"));
 
